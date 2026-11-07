@@ -1,6 +1,6 @@
 # juan-david-ospina-web
 
-Sitio "Tu Prof Juan" de Juan David Ospina — clases personalizadas de español e inglés (y francés en Colombia).
+Sitio "Tu Prof Juan" de Juan David Ospina — clases personalizadas de español, inglés y francés.
 
 Sitio estático: HTML con CSS y JS en línea, sin build ni dependencias (solo Google Fonts), más una función de Vercel.
 
@@ -26,7 +26,7 @@ precio, se cambia solo ahí. En el HTML los precios son marcadores (`data-p="via
 | `resto` | cualquier otro | USD (precios de norteamerica) |
 
 Orden para elegir la zona: `?zona=` en la URL → la que el visitante eligió en "Precios para" (guardada en el
-navegador) → el país de `/api/geo` → Colombia. Fuera de Colombia no se ofrece francés.
+navegador) → el país de `/api/geo` → Colombia. El francés se ofrece en todas las zonas.
 
 Para probar una zona: `https://juan-david-ospina-web.vercel.app/?zona=europa`
 (valores: `colombia`, `latam`, `norteamerica`, `europa`, `resto`).
