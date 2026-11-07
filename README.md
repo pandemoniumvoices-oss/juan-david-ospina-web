@@ -1,6 +1,6 @@
 # juan-david-ospina-web
 
-Sitio de Juan David Ospina — clases personalizadas de español, inglés y francés.
+Sitio "Tu Prof Juan" de Juan David Ospina — clases personalizadas de español, inglés y francés.
 
 Sitio estático: HTML con CSS y JS en línea, sin build ni dependencias (solo Google Fonts).
 

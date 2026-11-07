@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prueba de nivel de inglés — Juan David Ospina</title>
+<title>Prueba de nivel de inglés — Tu Prof Juan</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,7 +79,7 @@ legend{padding:0;font-family:var(--sans);font-size:14px;font-weight:500;margin-b
 <body>
 <header>
 <div class="bar">
-<a class="brand" href="index.html">Juan David Ospina</a>
+<a class="brand" href="index.html">Tu Prof Juan</a>
 <div style="display:flex;align-items:center;gap:12px">
 <div class="lang" role="group" aria-label="Idioma">
 <button type="button" data-lang="es" aria-pressed="true">ES</button>
@@ -690,7 +690,7 @@ Enviar resultados por WhatsApp</a>
     });
     staticAttrs.forEach(function (a) { a.el.setAttribute('aria-label', L(a.es)); });
     document.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
-    document.title = L('Prueba de nivel de inglés') + ' — Juan David Ospina';
+    document.title = L('Prueba de nivel de inglés') + ' — Tu Prof Juan';
     ['lock-err', 'info-err'].forEach(function (id) { $(id).hidden = true; });
     if (state.results && !$('s-done').hidden) paintResults();
   }
