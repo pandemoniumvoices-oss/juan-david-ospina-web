@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prueba de nivel de inglés — Juan David Ospina</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+:root{--cream:#F4EEE6;--paper:#FBF8F3;--line:#E2D7C9;--ink:#1E1A17;--muted:#5C524A;--body:#4A413A;--wine:#6E1F2A;--wine-d:#4A1219;--ok:#2F6B3A;
+  --serif:'Libre Caslon Text',Georgia,serif;--sans:'Montserrat',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.6}
+a{color:var(--wine)}a:hover{color:var(--wine-d)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+[hidden]{display:none!important}
+header{position:sticky;top:0;z-index:10;background:var(--cream);border-bottom:1px solid var(--line)}
+.bar{max-width:880px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:22px;color:var(--ink);text-decoration:none;line-height:1.1}
+.timer{font-family:var(--sans);font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--ink);border-radius:999px;font-variant-numeric:tabular-nums}
+.timer.low{border-color:var(--wine);color:var(--wine)}
+main{max-width:880px;margin:0 auto;padding:48px 24px 96px}
+.eyebrow{font-family:var(--sans);font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--wine)}
+h1{margin:8px 0 0;font-weight:400;font-size:clamp(32px,5vw,46px);line-height:1.12}
+h2{margin:0;font-weight:400;font-size:clamp(26px,4vw,34px);line-height:1.15}
+.lead{color:var(--body);font-size:18px;margin:16px 0 0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:clamp(22px,4vw,36px);margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:3px;border:1px solid var(--wine);background:var(--wine);color:#FBF8F3;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--wine-d);color:#FBF8F3}
+.btn.ghost{background:transparent;color:var(--wine)}
+.btn.ghost:hover{background:#F1E6DC;color:var(--wine-d)}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+label.field{display:flex;flex-direction:column;gap:6px;font-family:var(--sans);font-size:14px;font-weight:500}
+input[type=text],input[type=password],select,textarea{font:inherit;font-family:var(--serif);font-size:17px;padding:12px 14px;border:1px solid #BFB2A2;border-radius:3px;background:#fff;color:var(--ink);min-height:48px;width:100%}
+textarea{min-height:200px;resize:vertical;line-height:1.6}
+.err{color:var(--wine);font-family:var(--sans);font-size:14px;font-weight:500;margin:10px 0 0}
+fieldset{border:none;margin:0;padding:0}
+legend{padding:0;font-family:var(--sans);font-size:14px;font-weight:500;margin-bottom:10px}
+.q{padding:26px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:none;padding-top:8px}
+.q legend{font-family:var(--serif);font-size:19px;font-weight:400;line-height:1.45;margin-bottom:14px}
+.q .num{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--wine);display:block;margin-bottom:4px;letter-spacing:.06em}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.opt{display:flex;align-items:center;gap:12px;min-height:50px;padding:10px 14px;border:1px solid #CFC2B2;border-radius:3px;background:var(--cream);cursor:pointer;font-size:16px}
+.opt:hover{border-color:var(--ink)}
+.opt input{accent-color:var(--wine);width:18px;height:18px;margin:0;flex:none}
+.opt:has(input:checked){border-color:var(--wine);background:#F1E6DC}
+.opt .let{font-family:var(--sans);font-weight:600;font-size:13px;color:var(--muted);width:16px;flex:none}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:flex;align-items:center;gap:10px;min-height:46px;padding:8px 16px;border:1px solid #CFC2B2;border-radius:3px;background:var(--cream);cursor:pointer;font-family:var(--sans);font-size:15px}
+.chip input{accent-color:var(--wine);margin:0}
+.chip:has(input:checked){border-color:var(--wine);background:#F1E6DC}
+.steps{display:flex;gap:8px;margin-top:22px}
+.steps span{flex:1;height:4px;border-radius:2px;background:var(--line)}
+.steps span.done{background:var(--wine)}
+.steps span.now{background:#B98B93}
+.parts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.parts li{background:var(--cream);border-radius:3px;padding:14px 16px;font-size:15px}
+.parts b{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);font-weight:600}
+.passage{background:var(--cream);border-radius:3px;padding:22px 24px;font-size:17px;line-height:1.75;margin:0 0 8px}
+.notice{background:#F1E6DC;border:1px solid #D9BFC3;border-radius:3px;padding:14px 18px;font-family:var(--sans);font-size:14px;margin-top:20px}
+.count{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:8px}
+.level{font-size:clamp(54px,9vw,84px);line-height:1;color:var(--wine);margin:10px 0 6px}
+.scores{display:flex;flex-direction:column;gap:14px;margin-top:22px}
+.score{display:grid;grid-template-columns:minmax(150px,1fr) 3fr auto;gap:14px;align-items:center;font-family:var(--sans);font-size:14px}
+.meter{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--wine);border-radius:5px}
+.small{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.lang{display:flex;border:1px solid #CFC2B2;border-radius:999px;overflow:hidden;flex:none}
+.lang button{border:none;background:transparent;color:var(--ink);font-family:var(--sans);font-size:13px;font-weight:600;min-width:42px;min-height:40px;padding:0 8px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#FBF8F3}
+@media (max-width:480px){.brand{font-size:18px}.bar{padding:12px 16px}.timer{padding:6px 10px;font-size:14px}}
+@media (max-width:560px){.score{grid-template-columns:1fr auto}.score .meter{grid-column:1 / -1;grid-row:2}}
+</style>
+</head>
+<body>
+<header>
+<div class="bar">
+<a class="brand" href="index.html">Juan David Ospina</a>
+<div style="display:flex;align-items:center;gap:12px">
+<div class="lang" role="group" aria-label="Idioma">
+<button type="button" data-lang="es" aria-pressed="true">ES</button>
+<button type="button" data-lang="en" aria-pressed="false">EN</button>
+<button type="button" data-lang="fr" aria-pressed="false">FR</button>
+</div>
+<div id="timer" class="timer" role="timer" aria-live="off" hidden>
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2.5M9 2h6"></path></svg>
+<span id="timer-text">5:00</span>
+</div>
+</div>
+</div>
+</header>
+
+<main id="app">
+
+<!-- 1. Acceso -->
+<section id="s-lock">
+<div class="eyebrow">Diagnóstico inicial</div>
+<h1>Prueba de nivel de inglés</h1>
+<p class="lead">Este módulo se habilita durante tu diagnóstico. Juan te dará en ese momento un código de 6 dígitos; ingrésalo para empezar.</p>
+<div class="card">
+<form id="f-lock" novalidate>
+<label class="field" for="code">Código de acceso
+<input id="code" type="text" inputmode="numeric" pattern="[0-9 ]*" maxlength="7" autocomplete="one-time-code" placeholder="123 456" spellcheck="false" required style="font-family:var(--sans);font-size:24px;letter-spacing:.3em;max-width:240px">
+</label>
+<p id="lock-err" class="err" role="alert" hidden></p>
+<div class="row" style="margin-top:18px">
+<button class="btn" type="submit">Entrar</button>
+<a class="btn ghost" href="https://wa.me/573147261065?text=Hola%20Juan%2C%20quiero%20agendar%20mi%20diagn%C3%B3stico%20y%20mi%20prueba%20de%20nivel">No tengo código</a>
+</div>
+</form>
+</div>
+<p id="off-msg" class="notice" hidden>La prueba de nivel no está disponible en este momento. Escríbele a Juan para agendar tu diagnóstico.</p>
+</section>
+
+<!-- 2. Datos y objetivo -->
+<section id="s-info" hidden>
+<div class="eyebrow">Antes de empezar</div>
+<h1>Cuéntame sobre ti</h1>
+<p class="lead">Con esto Juan entiende tu objetivo y ve si su metodología se ajusta a lo que necesitas.</p>
+<form id="f-info" class="card" novalidate>
+<div style="display:flex;flex-direction:column;gap:26px">
+<label class="field" for="name">Tu nombre
+<input id="name" type="text" autocomplete="name" required>
+</label>
+<fieldset>
+<legend>¿Para qué necesitas el inglés?</legend>
+<div class="chips" id="goal-opts"></div>
+</fieldset>
+<fieldset>
+<legend>¿Para cuándo lo necesitas?</legend>
+<div class="chips" id="when-opts"></div>
+</fieldset>
+<fieldset>
+<legend>¿Cómo prefieres las clases?</legend>
+<div class="chips" id="mode-opts"></div>
+</fieldset>
+</div>
+<p id="info-err" class="err" role="alert" hidden></p>
+<div class="card" style="background:var(--cream);border:none;margin-top:28px">
+<h2 style="font-size:24px">Cómo es la prueba</h2>
+<ul class="parts">
+<li><b>Parte 1</b>Gramática · 5 preguntas</li>
+<li><b>Parte 2</b>Lectura · 3 preguntas</li>
+<li><b>Parte 3</b>Vocabulario · 3 preguntas</li>
+<li><b>Parte 4</b>Escritura · 4 a 5 oraciones</li>
+</ul>
+<p style="margin:16px 0 0;color:var(--body);font-size:16px">Tienes 5 minutos por parte. Si se acaba el tiempo, pasas automáticamente a la siguiente. No puedes volver a una parte anterior, así que responde con calma. No uses traductores: lo importante es conocer tu nivel real.</p>
+</div>
+<div class="row" style="margin-top:24px"><button class="btn" type="submit">Empezar la prueba</button></div>
+</form>
+</section>
+
+<!-- 3. Partes de la prueba -->
+<section id="s-test" hidden>
+<div class="eyebrow" id="part-eyebrow">Parte 1 de 4</div>
+<h1 id="part-title"></h1>
+<p class="lead" id="part-es"></p>
+<div class="steps" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<p id="timeout-msg" class="notice" role="status" hidden></p>
+<form id="f-part" class="card" novalidate>
+<p id="part-instr" style="margin:0 0 18px;font-style:italic;color:var(--body)"></p>
+<div id="part-body"></div>
+<p id="part-err" class="err" role="alert" hidden></p>
+<div class="row" style="margin-top:24px;justify-content:space-between">
+<span class="small" id="part-progress"></span>
+<button class="btn" type="submit" id="part-next">Siguiente parte</button>
+</div>
+</form>
+</section>
+
+<!-- 4. Resultados -->
+<section id="s-done" hidden>
+<div class="eyebrow">Prueba terminada</div>
+<h1 id="done-title">¡Muy bien!</h1>
+<p class="lead">Envíale tus resultados a Juan para que revise tu escrito y te confirme tu nivel y el paquete que más te conviene.</p>
+<div class="card">
+<p id="save-status" class="notice" role="status" style="margin:0 0 18px" hidden></p>
+<div class="small" style="text-transform:uppercase;letter-spacing:.2em;font-weight:600;color:var(--wine)">Nivel preliminar (MCER)</div>
+<div class="level" id="level"></div>
+<p style="margin:0;color:var(--body);font-size:16px" id="level-desc"></p>
+<div class="scores" id="scores"></div>
+<p class="small" style="margin-top:18px">El nivel preliminar se calcula con las partes 1 a 3. Juan lo confirma después de revisar tu escrito de la parte 4.</p>
+<div class="row" style="margin-top:26px">
+<a class="btn" id="send-wa" href="#" target="_blank" rel="noopener">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"></path></svg>
+Enviar resultados por WhatsApp</a>
+<a class="btn ghost" id="send-mail" href="#">Enviar por correo</a>
+<button class="btn ghost" type="button" id="copy">Copiar resultados</button>
+</div>
+<p id="copy-ok" class="small" role="status" style="margin-top:10px" hidden>Resultados copiados.</p>
+<p class="small" style="margin-top:14px">WhatsApp de Juan: (314) 726-1065 · Correo: juandavid.ospinag@gmail.com</p>
+</div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  /* ==============================================================
+     CONFIGURACIÓN PARA JUAN
+     ACTIVO: false = la prueba queda cerrada para todos.
+     Acceso: código de 6 dígitos que cambia cada 30 segundos (TOTP),
+     el mismo que muestra la app de autenticación de Juan en la
+     cuenta "Juan David Ospina: Prueba de nivel".
+     ============================================================== */
+  var ACTIVO = true;
+  /* SCRIPT_URL: enlace /exec de la aplicación web de Apps Script (hoja "Prueba de nivel — Resultados").
+     Con enlace: el código, la calificación y el guardado los hace la hoja de Juan.
+     Vacío: la prueba funciona sola en el navegador y no guarda resultados. */
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgsSzriFgR7DFpQrtd_wRpapVv4lpTYkNM0VFfki9oHr6GYZHa38gywcnMLcBqCqHT3A/exec';
+  var VENTANA = 2; /* acepta el código actual y los 2 anteriores o siguientes (unos 2,5 min) */
+  var K1 = [], K2 = [];
+  var SEGUNDOS_POR_PARTE = 300;
+  /* ---------- Idiomas de la interfaz (las preguntas del examen siguen en inglés) ---------- */
+  var TR = {
+    'Idioma': ['Language', 'Langue'],
+    'Diagnóstico inicial': ['Initial assessment', 'Diagnostic initial'],
+    'Prueba de nivel de inglés': ['English level test', "Test de niveau d'anglais"],
+    'Este módulo se habilita durante tu diagnóstico. Juan te dará en ese momento un código de 6 dígitos; ingrésalo para empezar.': ['This module opens during your assessment. Juan will give you a 6-digit code at that moment; enter it to begin.', "Ce module s'ouvre pendant votre diagnostic. Juan vous donnera à ce moment-là un code à 6 chiffres ; saisissez-le pour commencer."],
+    'Ese código no es válido o ya venció. Los códigos cambian cada 30 segundos: pídele a Juan el código actual.': ["That code isn't valid or has expired. Codes change every 30 seconds: ask Juan for the current one.", "Ce code n'est pas valide ou a expiré. Les codes changent toutes les 30 secondes : demandez à Juan le code actuel."],
+    'Código de acceso': ['Access code', "Code d'accès"],
+    'Entrar': ['Enter', 'Entrer'],
+    'No tengo código': ["I don't have a code", "Je n'ai pas de code"],
+    'La prueba de nivel no está disponible en este momento. Escríbele a Juan para agendar tu diagnóstico.': ['The level test is not available right now. Message Juan to book your assessment.', "Le test de niveau n'est pas disponible pour le moment. Écrivez à Juan pour réserver votre diagnostic."],
+    'Antes de empezar': ['Before you start', 'Avant de commencer'],
+    'Cuéntame sobre ti': ['Tell me about yourself', 'Parlez-moi de vous'],
+    'Con esto Juan entiende tu objetivo y ve si su metodología se ajusta a lo que necesitas.': ['This helps Juan understand your goal and see whether his method fits what you need.', 'Cela permet à Juan de comprendre votre objectif et de voir si sa méthode correspond à vos besoins.'],
+    'Tu nombre': ['Your name', 'Votre nom'],
+    '¿Para qué necesitas el inglés?': ['What do you need English for?', "Pourquoi avez-vous besoin de l'anglais ?"],
+    '¿Para cuándo lo necesitas?': ['When do you need it by?', "Pour quand en avez-vous besoin ?"],
+    '¿Cómo prefieres las clases?': ['How do you prefer your lessons?', 'Comment préférez-vous les cours ?'],
+    'Cómo es la prueba': ['How the test works', 'Déroulement du test'],
+    'Parte 1': ['Part 1', 'Partie 1'], 'Parte 2': ['Part 2', 'Partie 2'], 'Parte 3': ['Part 3', 'Partie 3'], 'Parte 4': ['Part 4', 'Partie 4'],
+    'Gramática · 5 preguntas': ['Grammar · 5 questions', 'Grammaire · 5 questions'],
+    'Lectura · 3 preguntas': ['Reading · 3 questions', 'Lecture · 3 questions'],
+    'Vocabulario · 3 preguntas': ['Vocabulary · 3 questions', 'Vocabulaire · 3 questions'],
+    'Escritura · 4 a 5 oraciones': ['Writing · 4 to 5 sentences', 'Écriture · 4 à 5 phrases'],
+    'Tienes 5 minutos por parte. Si se acaba el tiempo, pasas automáticamente a la siguiente. No puedes volver a una parte anterior, así que responde con calma. No uses traductores: lo importante es conocer tu nivel real.': ["You have 5 minutes per part. When time runs out, you move on to the next part automatically. You can't go back to a previous part, so take your time. Don't use translators: what matters is knowing your real level.", "Vous avez 5 minutes par partie. Quand le temps est écoulé, vous passez automatiquement à la suivante. Vous ne pouvez pas revenir en arrière, alors répondez calmement. N'utilisez pas de traducteur : l'important est de connaître votre vrai niveau."],
+    'Empezar la prueba': ['Start the test', 'Commencer le test'],
+    'Siguiente parte': ['Next part', 'Partie suivante'],
+    'Terminar la prueba': ['Finish the test', 'Terminer le test'],
+    'Prueba terminada': ['Test complete', 'Test terminé'],
+    '¡Muy bien!': ['Well done!', 'Bravo !'],
+    'Envíale tus resultados a Juan para que revise tu escrito y te confirme tu nivel y el paquete que más te conviene.': ['Send your results to Juan so he can review your writing and confirm your level and the package that suits you best.', 'Envoyez vos résultats à Juan pour qu’il corrige votre texte et vous confirme votre niveau et le forfait le plus adapté.'],
+    'Nivel preliminar (MCER)': ['Preliminary level (CEFR)', 'Niveau provisoire (CECRL)'],
+    'El nivel preliminar se calcula con las partes 1 a 3. Juan lo confirma después de revisar tu escrito de la parte 4.': ['The preliminary level is based on parts 1 to 3. Juan confirms it after reviewing your part 4 writing.', 'Le niveau provisoire est calculé sur les parties 1 à 3. Juan le confirme après avoir corrigé votre texte de la partie 4.'],
+    'Enviar resultados por WhatsApp': ['Send results on WhatsApp', 'Envoyer les résultats par WhatsApp'],
+    'Enviar por correo': ['Send by email', 'Envoyer par e-mail'],
+    'Copiar resultados': ['Copy results', 'Copier les résultats'],
+    'Resultados copiados.': ['Results copied.', 'Résultats copiés.'],
+    'WhatsApp de Juan: (314) 726-1065 · Correo: juandavid.ospinag@gmail.com': ["Juan's WhatsApp: +57 314 726 1065 · Email: juandavid.ospinag@gmail.com", 'WhatsApp de Juan : +57 314 726 1065 · E-mail : juandavid.ospinag@gmail.com'],
+    'Viajar': ['Travel', 'Voyager'],
+    'Entrevista de trabajo': ['Job interview', "Entretien d'embauche"],
+    'Examen o certificación': ['Exam or certificate', 'Examen ou certification'],
+    'Aprender desde cero o subir de nivel': ['Start from scratch or level up', 'Partir de zéro ou progresser'],
+    'Soltarme a hablar': ['Speak with confidence', 'Oser parler'],
+    'Menos de 1 mes': ['Less than 1 month', 'Moins d’1 mois'],
+    '1 a 3 meses': ['1 to 3 months', '1 à 3 mois'],
+    'Más de 3 meses': ['More than 3 months', 'Plus de 3 mois'],
+    'Sin fecha fija': ['No fixed date', 'Pas de date fixe'],
+    'Individual': ['One-to-one', 'Individuel'],
+    'Grupal': ['Group', 'En groupe'],
+    'Aún no sé': ["Not sure yet", 'Je ne sais pas encore'],
+    'Escribe el código que te dio Juan.': ['Enter the code Juan gave you.', 'Saisissez le code que Juan vous a donné.'],
+    'Ese código no es válido. Revísalo o pídele uno nuevo a Juan.': ["That code isn't valid. Check it or ask Juan for a new one.", "Ce code n'est pas valide. Vérifiez-le ou demandez-en un nouveau à Juan."],
+    'Completa tu nombre y elige una opción en cada pregunta.': ['Enter your name and choose an option for each question.', 'Indiquez votre nom et choisissez une option pour chaque question.'],
+    'Parte {n} de 4': ['Part {n} of 4', 'Partie {n} sur 4'],
+    'Gramática y uso del inglés': ['Grammar and use of English', "Grammaire et usage de l'anglais"],
+    'Comprensión de lectura': ['Reading comprehension', 'Compréhension écrite'],
+    'Vocabulario y uso en contexto': ['Vocabulary in context', 'Vocabulaire en contexte'],
+    'Escritura': ['Writing', 'Écriture'],
+    '5 minutos': ['5 minutes', '5 minutes'],
+    'Tu respuesta (en inglés)': ['Your answer (in English)', 'Votre réponse (en anglais)'],
+    '{w} palabras · {s} oraciones (la meta son 4 a 5)': ['{w} words · {s} sentences (aim for 4 to 5)', '{w} mots · {s} phrases (objectif : 4 à 5)'],
+    'PREGUNTA {n}': ['QUESTION {n}', 'QUESTION {n}'],
+    '{n} de {t} respondidas': ['{n} of {t} answered', '{n} sur {t} répondues'],
+    'Tiempo restante de esta parte: {t}': ['Time left for this part: {t}', 'Temps restant pour cette partie : {t}'],
+    'Te falta 1 pregunta. Si quieres seguir de todas formas, vuelve a pulsar el botón.': ['1 question is unanswered. To continue anyway, press the button again.', "Il reste 1 question sans réponse. Pour continuer quand même, appuyez à nouveau sur le bouton."],
+    'Te faltan {n} preguntas. Si quieres seguir de todas formas, vuelve a pulsar el botón.': ['{n} questions are unanswered. To continue anyway, press the button again.', 'Il reste {n} questions sans réponse. Pour continuer quand même, appuyez à nouveau sur le bouton.'],
+    'Tu escrito está vacío. Si quieres terminar de todas formas, vuelve a pulsar el botón.': ['Your writing is empty. To finish anyway, press the button again.', 'Votre texte est vide. Pour terminer quand même, appuyez à nouveau sur le bouton.'],
+    'Se acabó el tiempo de la parte {a}. Seguimos con la parte {b}.': ['Time is up for part {a}. On to part {b}.', 'Le temps de la partie {a} est écoulé. Passons à la partie {b}.'],
+    '¡Muy bien, {n}!': ['Well done, {n}!', 'Bravo, {n} !'],
+    'Principiante / elemental. Una base sólida te dará estructura y confianza.': ['Beginner / elementary. A solid foundation will give you structure and confidence.', 'Débutant / élémentaire. Des bases solides vous donneront structure et confiance.'],
+    'Intermedio. Te comunicas con claridad; el siguiente paso es ganar precisión y naturalidad.': ['Intermediate. You communicate clearly; the next step is accuracy and fluency.', 'Intermédiaire. Vous communiquez clairement ; la prochaine étape est la précision et l’aisance.'],
+    'Intermedio alto. Manejas textos y vocabulario complejos con pocos errores.': ['Upper intermediate. You handle complex texts and vocabulary with few errors.', 'Intermédiaire avancé. Vous maîtrisez des textes et un vocabulaire complexes avec peu d’erreurs.'],
+    'Avanzado / experto. Dominas estructuras difíciles; el trabajo está en el matiz y la precisión.': ['Advanced / proficient. You master difficult structures; the work now is nuance and precision.', 'Avancé / expert. Vous maîtrisez les structures difficiles ; le travail porte sur la nuance et la précision.'],
+    'Parte 1 · Gramática': ['Part 1 · Grammar', 'Partie 1 · Grammaire'],
+    'Parte 2 · Lectura': ['Part 2 · Reading', 'Partie 2 · Lecture'],
+    'Parte 3 · Vocabulario': ['Part 3 · Vocabulary', 'Partie 3 · Vocabulaire'],
+    'Parte 4 · Escritura': ['Part 4 · Writing', 'Partie 4 · Écriture'],
+    'Juan la revisa personalmente': ['Juan reviews it personally', 'Juan la corrige personnellement'],
+    '{n} de {t}': ['{n} of {t}', '{n} sur {t}'],
+    'No se pudo conectar. Revisa tu internet e inténtalo de nuevo.': ["Couldn't connect. Check your internet and try again.", "Connexion impossible. Vérifiez votre connexion et réessayez."],
+    'Ese código ya se usó. Espera a que cambie y pídele a Juan el siguiente.': ['That code has already been used. Wait for it to change and ask Juan for the next one.', 'Ce code a déjà été utilisé. Attendez qu’il change et demandez le suivant à Juan.'],
+    'Guardando tus resultados…': ['Saving your results…', 'Enregistrement de vos résultats…'],
+    'Listo: tus resultados ya le llegaron a Juan.': ['Done: Juan has received your results.', 'C’est fait : Juan a bien reçu vos résultats.'],
+    'No pudimos guardar tus resultados. Envíaselos a Juan por WhatsApp con el botón de abajo.': ["We couldn't save your results. Send them to Juan on WhatsApp with the button below.", "Nous n'avons pas pu enregistrer vos résultats. Envoyez-les à Juan par WhatsApp avec le bouton ci-dessous."],
+    'El idioma se elige antes de empezar la prueba.': ['Choose the language before starting the test.', 'Choisissez la langue avant de commencer le test.']
+  };
+  var LANG = 'es';
+  try { LANG = localStorage.getItem('jdo-lang') || ''; } catch (e) { LANG = ''; }
+  if (!LANG) { var nl = (navigator.language || 'es').slice(0, 2); LANG = (nl === 'en' || nl === 'fr') ? nl : 'es'; }
+  function L(key, vars) {
+    var out = (LANG !== 'es' && TR[key]) ? TR[key][LANG === 'en' ? 0 : 1] : key;
+    if (vars) Object.keys(vars).forEach(function (k) { out = out.split('{' + k + '}').join(vars[k]); });
+    return out;
+  }
+
+  var PARTS = [
+    { title: 'Grammar & Use of English', es: 'Gramática y uso del inglés', instr: 'Choose the correct option (A, B, C, or D) for each question.',
+      qs: [
+        { q: 'Look! It… outside, so we can’t go to the park.', o: ['rains', 'is raining', 'rained', 'has rained'] },
+        { q: 'If I… more free time, I would learn a third language.', o: ['have', 'had', 'will have', 'would have'] },
+        { q: 'By the time we arrived at the station, the train…', o: ['already left', 'has already left', 'had already left', 'was already leaving'] },
+        { q: 'The new policy… by the board of directors next week.', o: ['will discuss', 'will be discussed', 'is discussing', 'has discussed'] },
+        { q: 'Seldom… such a remarkable exhibition of modern art.', o: ['I have seen', 'have I seen', 'I saw', 'did I saw'] }
+      ] },
+    { title: 'Reading Comprehension', es: 'Comprensión de lectura', instr: 'Read the short passage and answer the questions below.',
+      passage: 'Urban green spaces, ranging from pocket parks to extensive municipal woodlands, play a critical role in mitigating the urban heat island effect while simultaneously enhancing public psychological well-being. However, maintaining these ecosystems presents logistical challenges for city planners, particularly regarding water scarcity and spatial competition with commercial real estate development. Consequently, contemporary urban design increasingly relies on drought-resistant native flora and vertical gardens to harmonize ecological preservation with economic viability.',
+      qs: [
+        { q: 'What is one primary ecological benefit of urban green spaces mentioned in the text?', o: ['Reducing commercial real estate costs', 'Mitigating the urban heat island effect', 'Generating renewable energy for municipalities', 'Eliminating the need for urban water supplies'] },
+        { q: 'According to the text, what is a major challenge city planners face?', o: ['Public resistance to planting native flora', 'Water scarcity and competition with commercial real estate', 'The excessive cost of vertical garden technology', 'Rapid destruction of pocket parks by wildlife'] },
+        { q: 'How are contemporary designers trying to solve these challenges?', o: ['By replacing green spaces with commercial buildings', 'By relying on drought-resistant native flora and vertical gardens', 'By banning development near municipal woodlands', 'By relying entirely on imported plant species'] }
+      ] },
+    { title: 'Vocabulary & Contextual Usage', es: 'Vocabulario y uso en contexto', instr: 'Choose the word that best fits the blank.',
+      qs: [
+        { q: 'Despite the unexpected setbacks, the team managed to… the project deadline.', o: ['run out', 'catch up', 'pull off', 'look into'] },
+        { q: 'Her presentation was so… that the audience remained completely silent and captivated throughout.', o: ['tedious', 'riveting', 'ambiguous', 'trivial'] },
+        { q: 'The manager asked us to… on unnecessary expenses to stay within our quarterly budget.', o: ['cut back', 'bring about', 'drop out', 'look after'] }
+      ] },
+    { title: 'Writing', es: 'Escritura', instr: 'Write 4 to 5 sentences responding to the prompt below.', writing: true,
+      prompt: 'Describe a significant challenge you have faced in your professional or academic life, and explain how you overcame it or what you learned from the experience.' }
+  ];
+  var KEY = null;
+  var GOALS = ['Viajar', 'Entrevista de trabajo', 'Examen o certificación', 'Aprender desde cero o subir de nivel', 'Soltarme a hablar'];
+  var WHEN = ['Menos de 1 mes', '1 a 3 meses', 'Más de 3 meses', 'Sin fecha fija'];
+  var MODES = ['Individual', 'Grupal', 'Aún no sé'];
+  var LEVELS = {
+    'A1–A2': 'Principiante / elemental. Una base sólida te dará estructura y confianza.',
+    'B1': 'Intermedio. Te comunicas con claridad; el siguiente paso es ganar precisión y naturalidad.',
+    'B2': 'Intermedio alto. Manejas textos y vocabulario complejos con pocos errores.',
+    'C1–C2': 'Avanzado / experto. Dominas estructuras difíciles; el trabajo está en el matiz y la precisión.'
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var state = { part: 0, answers: [[], [], []], writing: '', info: {}, started: 0, left: SEGUNDOS_POR_PARTE, tick: null, inTest: false };
+
+  function show(id) {
+    ['s-lock', 's-info', 's-test', 's-done'].forEach(function (s) { $(s).hidden = s !== id; });
+    window.scrollTo(0, 0);
+  }
+  function el(tag, attrs, text) {
+    var e = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function chips(container, name, values) {
+    values.forEach(function (v, i) {
+      var lab = el('label', { class: 'chip' });
+      var inp = el('input', { type: 'radio', name: name, value: v });
+      if (i === 0) inp.required = true;
+      lab.appendChild(inp); lab.appendChild(document.createTextNode(v));
+      $(container).appendChild(lab);
+    });
+  }
+  chips('goal-opts', 'goal', GOALS);
+  chips('when-opts', 'when', WHEN);
+  chips('mode-opts', 'mode', MODES);
+
+  function b32(str) {
+    var A = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567', bits = '', out = [];
+    for (var i = 0; i < str.length; i++) bits += A.indexOf(str[i]).toString(2).padStart(5, '0');
+    for (var j = 0; j + 8 <= bits.length; j += 8) out.push(parseInt(bits.slice(j, j + 8), 2));
+    return new Uint8Array(out);
+  }
+  async function totp(step) {
+    var sec = K1.map(function (c, i) { return String.fromCharCode(c ^ K2[i]); }).join('');
+    var key = await crypto.subtle.importKey('raw', b32(sec), { name: 'HMAC', hash: 'SHA-1' }, false, ['sign']);
+    var msg = new ArrayBuffer(8), v = new DataView(msg);
+    v.setUint32(0, Math.floor(step / 4294967296)); v.setUint32(4, step >>> 0);
+    var h = new Uint8Array(await crypto.subtle.sign('HMAC', key, msg));
+    var o = h[19] & 15;
+    var n = ((h[o] & 127) << 24 | h[o + 1] << 16 | h[o + 2] << 8 | h[o + 3]) % 1000000;
+    return String(n).padStart(6, '0');
+  }
+  async function api(data) {
+    var r = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(data) });
+    return r.json();
+  }
+  async function codeOk(code) {
+    var now = Math.floor(Date.now() / 30000);
+    for (var d = -VENTANA; d <= VENTANA; d++) { if (await totp(now + d) === code) return true; }
+    return false;
+  }
+
+  if (!ACTIVO) { $('f-lock').closest('.card').hidden = true; $('off-msg').hidden = false; }
+  try {
+    if (ACTIVO && sessionStorage.getItem('jdo-acceso') === '1' && (!SCRIPT_URL || sessionStorage.getItem('jdo-token'))) {
+      state.token = sessionStorage.getItem('jdo-token');
+      show('s-info');
+    }
+  } catch (e) {}
+
+  $('f-lock').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var code = $('code').value.replace(/\D/g, '');
+    var err = $('lock-err');
+    if (!code) { err.textContent = L('Escribe el código que te dio Juan.'); err.hidden = false; return; }
+    var ok = false;
+    var btn = e.target.querySelector('button[type=submit]');
+    if (SCRIPT_URL) {
+      if (code.length !== 6) { err.textContent = L('Ese código no es válido o ya venció. Los códigos cambian cada 30 segundos: pídele a Juan el código actual.'); err.hidden = false; return; }
+      btn.disabled = true;
+      var res = null;
+      try { res = await api({ action: 'start', code: code }); } catch (x) { res = null; }
+      btn.disabled = false;
+      if (!res) { err.textContent = L('No se pudo conectar. Revisa tu internet e inténtalo de nuevo.'); err.hidden = false; return; }
+      if (!res.ok) {
+        err.textContent = L(res.error === 'used' ? 'Ese código ya se usó. Espera a que cambie y pídele a Juan el siguiente.' : 'Ese código no es válido o ya venció. Los códigos cambian cada 30 segundos: pídele a Juan el código actual.');
+        err.hidden = false; $('code').select(); return;
+      }
+      state.token = res.token;
+      try { sessionStorage.setItem('jdo-token', res.token); } catch (x) {}
+      ok = true;
+    } else {
+      try { ok = code.length === 6 && await codeOk(code); } catch (x) { ok = false; }
+    }
+    if (!ok) { err.textContent = L('Ese código no es válido o ya venció. Los códigos cambian cada 30 segundos: pídele a Juan el código actual.'); err.hidden = false; $('code').select(); return; }
+    try { sessionStorage.setItem('jdo-acceso', '1'); } catch (x) {}
+    show('s-info');
+    $('name').focus();
+  });
+
+  $('f-info').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, err = $('info-err');
+    var name = $('name').value.trim();
+    var goal = f.goal.value, when = f.when.value, mode = f.mode.value;
+    if (!name || !goal || !when || !mode) {
+      err.textContent = L('Completa tu nombre y elige una opción en cada pregunta.'); err.hidden = false; return;
+    }
+    err.hidden = true;
+    state.info = { name: name, goal: goal, when: when, mode: mode };
+    state.started = Date.now();
+    state.inTest = true;
+    document.querySelector('.lang').style.opacity = '0.45';
+    renderPart(0);
+    show('s-test');
+  });
+
+  function renderPart(i) {
+    state.part = i;
+    var P = PARTS[i];
+    $('part-eyebrow').textContent = L('Parte {n} de 4', { n: i + 1 });
+    $('part-title').textContent = P.title;
+    $('part-es').textContent = L(P.es) + ' · ' + L('5 minutos');
+    $('part-instr').textContent = P.instr;
+    $('part-next').textContent = L(i === 3 ? 'Terminar la prueba' : 'Siguiente parte');
+    $('part-err').hidden = true;
+    document.querySelectorAll('.steps span').forEach(function (s, k) { s.className = k < i ? 'done' : (k === i ? 'now' : ''); });
+    var body = $('part-body'); body.textContent = '';
+    if (P.passage) {
+      body.appendChild(el('div', { class: 'small', style: 'font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px' }, 'Passage'));
+      body.appendChild(el('p', { class: 'passage' }, P.passage));
+    }
+    if (P.writing) {
+      body.appendChild(el('p', { style: 'margin:0 0 16px;font-size:19px;line-height:1.5' }, P.prompt));
+      var lab = el('label', { class: 'field', for: 'writing' }, L('Tu respuesta (en inglés)'));
+      var ta = el('textarea', { id: 'writing', spellcheck: 'false', autocorrect: 'off', autocapitalize: 'sentences' });
+      ta.value = state.writing;
+      lab.appendChild(ta); body.appendChild(lab);
+      var cnt = el('div', { class: 'count', id: 'w-count', 'aria-live': 'polite' });
+      body.appendChild(cnt);
+      var upd = function () {
+        state.writing = ta.value;
+        var words = (ta.value.trim().match(/\S+/g) || []).length;
+        var sents = (ta.value.match(/[^.!?]+[.!?]+/g) || []).length;
+        cnt.textContent = L('{w} palabras · {s} oraciones (la meta son 4 a 5)', { w: words, s: sents });
+      };
+      ta.addEventListener('input', upd); upd();
+      $('part-progress').textContent = '';
+    } else {
+      P.qs.forEach(function (q, qi) {
+        var fs = el('fieldset', { class: 'q' });
+        var lg = el('legend');
+        lg.appendChild(el('span', { class: 'num' }, L('PREGUNTA {n}', { n: qi + 1 })));
+        lg.appendChild(document.createTextNode(q.q));
+        fs.appendChild(lg);
+        var grid = el('div', { class: 'opts' });
+        q.o.forEach(function (o, oi) {
+          var lab = el('label', { class: 'opt' });
+          var inp = el('input', { type: 'radio', name: 'p' + i + 'q' + qi, value: String(oi) });
+          inp.addEventListener('change', function () { state.answers[i][qi] = oi; progress(); });
+          lab.appendChild(inp);
+          lab.appendChild(el('span', { class: 'let', 'aria-hidden': 'true' }, 'ABCD'[oi]));
+          lab.appendChild(document.createTextNode(o));
+          grid.appendChild(lab);
+        });
+        fs.appendChild(grid);
+        body.appendChild(fs);
+      });
+      progress();
+    }
+    startTimer();
+  }
+  function progress() {
+    var P = PARTS[state.part]; if (P.writing) return;
+    var n = state.answers[state.part].filter(function (v) { return v != null; }).length;
+    $('part-progress').textContent = L('{n} de {t} respondidas', { n: n, t: P.qs.length });
+  }
+
+  function fmt(s) { return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+  function startTimer() {
+    clearInterval(state.tick);
+    state.left = SEGUNDOS_POR_PARTE;
+    var t = $('timer'); t.hidden = false;
+    var paint = function () {
+      $('timer-text').textContent = fmt(state.left);
+      t.classList.toggle('low', state.left <= 60);
+      t.setAttribute('aria-label', L('Tiempo restante de esta parte: {t}', { t: fmt(state.left) }));
+    };
+    paint();
+    state.tick = setInterval(function () {
+      state.left--; paint();
+      if (state.left <= 0) { clearInterval(state.tick); next(true); }
+    }, 1000);
+  }
+
+  $('f-part').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var P = PARTS[state.part];
+    if (!P.writing) {
+      var missing = P.qs.length - state.answers[state.part].filter(function (v) { return v != null; }).length;
+      if (missing > 0 && !$('part-err').dataset.warned) {
+        $('part-err').textContent = L(missing === 1 ? 'Te falta 1 pregunta. Si quieres seguir de todas formas, vuelve a pulsar el botón.' : 'Te faltan {n} preguntas. Si quieres seguir de todas formas, vuelve a pulsar el botón.', { n: missing });
+        $('part-err').hidden = false; $('part-err').dataset.warned = '1'; return;
+      }
+    } else if (!state.writing.trim() && !$('part-err').dataset.warned) {
+      $('part-err').textContent = L('Tu escrito está vacío. Si quieres terminar de todas formas, vuelve a pulsar el botón.');
+      $('part-err').hidden = false; $('part-err').dataset.warned = '1'; return;
+    }
+    next(false);
+  });
+
+  function next(timedOut) {
+    clearInterval(state.tick);
+    delete $('part-err').dataset.warned;
+    var msg = $('timeout-msg');
+    if (state.part < 3) {
+      var done = state.part + 1;
+      renderPart(done);
+      if (timedOut) { msg.textContent = L('Se acabó el tiempo de la parte {a}. Seguimos con la parte {b}.', { a: done, b: done + 1 }); msg.hidden = false; }
+      else msg.hidden = true;
+      window.scrollTo(0, 0);
+    } else {
+      finish(timedOut);
+    }
+  }
+
+  function paintResults() {
+    var level = state.results.level, n = state.results.n;
+    $('done-title').textContent = L('¡Muy bien, {n}!', { n: state.info.name.split(' ')[0] });
+    $('level').textContent = level;
+    $('level-desc').textContent = L(LEVELS[level]);
+    var names = ['Parte 1 · Gramática', 'Parte 2 · Lectura', 'Parte 3 · Vocabulario'];
+    var box = $('scores'); box.textContent = '';
+    names.forEach(function (nm, i) {
+      var row = el('div', { class: 'score' });
+      row.appendChild(el('span', null, L(nm)));
+      var m = el('div', { class: 'meter', role: 'img', 'aria-label': L('{n} de {t}', { n: n[i], t: [5, 3, 3][i] }) });
+      var bar = el('i'); bar.style.width = (n[i] / [5, 3, 3][i] * 100) + '%';
+      m.appendChild(bar); row.appendChild(m);
+      row.appendChild(el('strong', null, n[i] + '/' + [5, 3, 3][i]));
+      box.appendChild(row);
+    });
+    var wrow = el('div', { class: 'score' });
+    wrow.appendChild(el('span', null, L('Parte 4 · Escritura')));
+    wrow.appendChild(el('span', { class: 'small' }, L('Juan la revisa personalmente')));
+    wrow.appendChild(el('span'));
+    box.appendChild(wrow);
+
+  }
+
+  function gradeLocal() {
+    var sc = KEY.map(function (k, pi) { return k.map(function (c, qi) { return state.answers[pi][qi] === c; }); });
+    var n = sc.map(function (a) { return a.filter(Boolean).length; });
+    var total = n[0] + n[1] + n[2];
+    var level;
+    if (total >= 10 && sc[0][4]) level = 'C1–C2';
+    else if (n[0] >= 4 && n[1] >= 3 && n[2] >= 2) level = 'B2';
+    else if (sc[0][0] && sc[0][1] && sc[0][2] && n[1] >= 2 && n[2] >= 1) level = 'B1';
+    else level = 'A1–A2';
+    var wrong = [];
+    sc.forEach(function (a, pi) { a.forEach(function (ok, qi) { if (!ok) wrong.push('P' + (pi + 1) + '-' + (qi + 1)); }); });
+    return { level: level, n: n, total: total, wrong: wrong };
+  }
+
+  async function finish(timedOut) {
+    state.inTest = false;
+    document.querySelector('.lang').style.opacity = '';
+    $('timer').hidden = true;
+    var mins = Math.max(1, Math.round((Date.now() - state.started) / 60000));
+    var status = $('save-status');
+    var g = null;
+    if (SCRIPT_URL) {
+      $('scores').textContent = ''; $('level').textContent = '…'; $('level-desc').textContent = '';
+      status.textContent = L('Guardando tus resultados…'); status.hidden = false;
+      show('s-done');
+      try {
+        var res = await api({ action: 'submit', token: state.token, info: state.info, answers: state.answers,
+          writing: state.writing, mins: mins, timedOut: !!timedOut, lang: LANG });
+        if (res && res.ok) g = res;
+      } catch (x) { g = null; }
+      try { sessionStorage.removeItem('jdo-token'); sessionStorage.removeItem('jdo-acceso'); } catch (x) {}
+      status.textContent = L(g ? 'Listo: tus resultados ya le llegaron a Juan.' : 'No pudimos guardar tus resultados. Envíaselos a Juan por WhatsApp con el botón de abajo.');
+    } else {
+      g = gradeLocal();
+      status.hidden = true;
+    }
+    var words = (state.writing.trim().match(/\S+/g) || []).length;
+    var marks = state.answers.map(function (a, pi) {
+      return 'P' + (pi + 1) + ': ' + [0, 1, 2, 3, 4].slice(0, [5, 3, 3][pi]).map(function (qi) {
+        var v = a[qi]; return (qi + 1) + (v != null ? 'ABCD'[v] : '–');
+      }).join(' ');
+    }).join(' | ');
+    var text;
+    if (g) {
+      state.results = { level: g.level, n: g.n };
+      paintResults();
+      var n = g.n, total = g.total, level = g.level, wrong = g.wrong;
+      text = [
+      'Hola Juan, terminé la prueba de nivel de inglés.',
+      '',
+      'Nombre: ' + state.info.name,
+      'Objetivo: ' + state.info.goal,
+      'Para cuándo: ' + state.info.when,
+      'Modalidad: ' + state.info.mode,
+      '',
+      'Parte 1 (Gramática): ' + n[0] + '/5',
+      'Parte 2 (Lectura): ' + n[1] + '/3',
+      'Parte 3 (Vocabulario): ' + n[2] + '/3',
+      'Total: ' + total + '/11',
+      'Nivel preliminar: ' + level,
+      'Incorrectas o sin responder: ' + (wrong.length ? wrong.join(', ') : 'ninguna'),
+      'Tiempo usado: ' + mins + ' min' + (timedOut ? ' (se agotó el tiempo)' : ''),
+      '',
+      'Parte 4 (Escritura, ' + words + ' palabras):',
+      state.writing.trim() || '(sin respuesta)'
+    ].join('\n');
+    } else {
+      $('level').textContent = '—';
+      text = ['Hola Juan, terminé la prueba de nivel de inglés, pero no se pudieron guardar los resultados.', '',
+        'Nombre: ' + state.info.name, 'Objetivo: ' + state.info.goal, 'Para cuándo: ' + state.info.when, 'Modalidad: ' + state.info.mode, '',
+        'Respuestas marcadas: ' + marks, 'Tiempo usado: ' + mins + ' min' + (timedOut ? ' (se agotó el tiempo)' : ''), '',
+        'Parte 4 (Escritura, ' + words + ' palabras):', state.writing.trim() || '(sin respuesta)'].join('\n');
+    }
+    $('send-wa').href = 'https://wa.me/573147261065?text=' + encodeURIComponent(text);
+    $('send-mail').href = 'mailto:juandavid.ospinag@gmail.com?subject=' + encodeURIComponent('Prueba de nivel: ' + state.info.name) + '&body=' + encodeURIComponent(text);
+    $('copy').onclick = function () {
+      var done = function () { $('copy-ok').hidden = false; };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () {});
+    };
+    show('s-done');
+  }
+
+
+  /* ---------- Cambio de idioma ---------- */
+  var staticNodes = [], staticAttrs = [];
+  (function collect() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: function (n) {
+      var p = n.parentNode;
+      if (!n.nodeValue.trim() || !p || /^(SCRIPT|STYLE)$/.test(p.nodeName) || p.closest('svg') || p.closest('#part-body') || p.closest('#scores')) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT; } });
+    var n; while ((n = w.nextNode())) staticNodes.push({ node: n, es: n.nodeValue });
+    document.querySelectorAll('[aria-label]').forEach(function (e) { if (!e.closest('#part-body') && !e.closest('#scores') && e.id !== 'timer') staticAttrs.push({ el: e, es: e.getAttribute('aria-label') }); });
+  })();
+  var DYN = ['part-eyebrow', 'part-es', 'part-next', 'part-progress', 'done-title', 'level-desc', 'timer-text', 'level'];
+  function setLang(lang) {
+    LANG = lang;
+    try { localStorage.setItem('jdo-lang', lang); } catch (e) {}
+    document.documentElement.lang = lang;
+    staticNodes.forEach(function (s) {
+      var p = s.node.parentNode; if (p && p.id && DYN.indexOf(p.id) > -1) return;
+      var k = s.es.trim(); s.node.nodeValue = s.es.replace(k, L(k));
+    });
+    staticAttrs.forEach(function (a) { a.el.setAttribute('aria-label', L(a.es)); });
+    document.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    document.title = L('Prueba de nivel de inglés') + ' — Juan David Ospina';
+    ['lock-err', 'info-err'].forEach(function (id) { $(id).hidden = true; });
+    if (state.results && !$('s-done').hidden) paintResults();
+  }
+  document.querySelectorAll('[data-lang]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (state.inTest) { b.title = L('El idioma se elige antes de empezar la prueba.'); return; }
+      setLang(b.getAttribute('data-lang'));
+    });
+  });
+  setLang(LANG);
+
+  window.addEventListener('beforeunload', function (e) { if (state.inTest) { e.preventDefault(); e.returnValue = ''; } });
+})();
+</script>
+</body>
+</html>
