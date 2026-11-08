@@ -104,6 +104,18 @@ footer > div:first-child{padding:56px 20px!important;gap:32px!important}
 .pkg-dots{display:flex}
 .price-table tr{padding:12px 16px}
 }
+/* ===== Tarjetas de paquetes más compactas en teléfono y tablet ===== */
+@media (max-width:1180px){
+.pkg-grid > article{gap:10px!important;padding:22px 20px!important}
+.pkg-grid > article > svg{display:none}
+.pkg-grid > article h3{font-size:24px!important}
+.pkg-grid > article [style*="font-size: 34px"]{font-size:28px!important}
+.pkg-grid > article > p{font-size:15px!important;line-height:1.45}
+.pkg-grid > article ul{font-size:14px!important;gap:3px!important;line-height:1.45}
+.pkg-grid > article > a{padding:11px 16px!important}
+.lvl-box{padding-top:10px!important;gap:6px!important}
+.lvl-grid{grid-template-columns:auto 1fr auto 1fr!important;column-gap:10px!important}
+}
 @media (prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 .drawer,.drawer-backdrop,.pkg-grid > article,header,.nav-links a::after{transition:none!important}
@@ -348,9 +360,9 @@ html{scroll-behavior:auto}
 <li>Gramática, vocabulario y conversación</li>
 <li>Medición de tu avance cada mes</li>
 </ul>
-<div style="border-top: 1px solid #E2D7C9; padding-top: 14px; display: flex; flex-direction: column; gap: 8px">
+<div class="lvl-box" style="border-top: 1px solid #E2D7C9; padding-top: 14px; display: flex; flex-direction: column; gap: 8px">
 <div style="font-family: 'Montserrat', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E1F2A">Tiempo promedio por nivel</div>
-<div style="display: grid; grid-template-columns: auto 1fr; column-gap: 14px; row-gap: 4px; font-size: 15px; color: #2E2823">
+<div class="lvl-grid" style="display: grid; grid-template-columns: auto 1fr; column-gap: 14px; row-gap: 4px; font-size: 15px; color: #2E2823">
 <strong style="font-family: 'Montserrat', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #6E1F2A">A1</strong><span>3 a 4 meses</span>
 <strong style="font-family: 'Montserrat', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #6E1F2A">A2</strong><span>3 a 4 meses</span>
 <strong style="font-family: 'Montserrat', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #6E1F2A">B1</strong><span>5 a 6 meses</span>
