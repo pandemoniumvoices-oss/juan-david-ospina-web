@@ -25,8 +25,8 @@ precio, se cambia solo ahí. En el HTML los precios son marcadores (`data-p="via
 | `europa` | Europa | EUR |
 | `resto` | cualquier otro | USD (precios de norteamerica) |
 
-Orden para elegir la zona: `?zona=` en la URL → la que el visitante eligió en "Precios para" (guardada en el
-navegador) → el país de `/api/geo` → Colombia. El francés se ofrece en todas las zonas.
+Orden para elegir la zona: `?zona=` en la URL → el país de `/api/geo` → Colombia. El visitante no puede
+cambiar la zona (no hay selector en la página). El francés se ofrece en todas las zonas.
 
 Para probar una zona: `https://juan-david-ospina-web.vercel.app/?zona=europa`
 (valores: `colombia`, `latam`, `norteamerica`, `europa`, `resto`).
