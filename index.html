@@ -35,6 +35,11 @@ details[open] .faq-plus{transform:rotate(45deg)}
 .lang button{border:none;background:transparent;color:#1E1A17;font-family:'Montserrat',system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;min-width:44px;min-height:44px;padding:0 10px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:#1E1A17;color:#FBF8F3}
 .price-details > summary{display:none}
+/* Tabla de precios: solo la columna de la modalidad elegida (4 = individual, 5 = grupal),
+   y sin las filas que no existen en esa modalidad (las que tienen "—") */
+.price-table[data-modo="ind"] :is(th,td):nth-child(5),.price-table[data-modo="grp"] :is(th,td):nth-child(4){display:none!important}
+.price-table[data-modo="ind"] tbody tr:not(:has(> td:nth-child(4) span)),.price-table[data-modo="grp"] tbody tr:not(:has(> td:nth-child(5) span)){display:none!important}
+.price-table[data-modo] td:nth-child(4),.price-table[data-modo] td:nth-child(5){color:#6E1F2A!important;font-weight:700!important}
 @media (max-width:640px){
 .price-details > summary{display:flex}
 .price-details[open] > summary{margin-bottom:14px}
@@ -252,18 +257,6 @@ html{scroll-behavior:auto}
 <h2 style="margin: 0; font-weight: 400; font-size: clamp(30px, 4vw, 42px); line-height: 1.12">Un paquete para cada objetivo</h2>
 <p style="margin: 0; color: #4A413A">Cada paquete tiene una meta clara, una duración fija y un resultado que puedes ver. Cambia la modalidad para comparar precios.</p>
 </div>
-<div role="group" aria-label="Modalidad de las clases" class="mode-group" style="border: 1px solid #1E1A17; border-radius: 3px; overflow: hidden">
-<div data-show="m-ind" style="display: flex">
-<button type="button" aria-pressed="true" data-mode="ind" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: #1E1A17; color: #FBF8F3">Individual</button>
-<button type="button" aria-pressed="false" data-mode="grp" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: transparent; color: #1E1A17">Grupal (2 a 5 personas)</button>
-</div>
-
-<div data-show="m-grp" hidden style="display: flex">
-<button type="button" aria-pressed="false" data-mode="ind" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: transparent; color: #1E1A17">Individual</button>
-<button type="button" aria-pressed="true" data-mode="grp" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: #1E1A17; color: #FBF8F3">Grupal (2 a 5 personas)</button>
-</div>
-
-</div>
 </div>
 
 <div id="clase-de-prueba" style="border: 1px solid #6E1F2A; border-radius: 4px; padding: 26px 30px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px; background: #F4EEE6; scroll-margin-top: 80px">
@@ -293,6 +286,20 @@ html{scroll-behavior:auto}
 </div>
 </div>
 
+<div class="mode-row" style="display: flex; justify-content: flex-end; margin-bottom: -16px">
+<div role="group" aria-label="Modalidad de las clases" class="mode-group" style="border: 1px solid #1E1A17; border-radius: 3px; overflow: hidden">
+<div data-show="m-ind" style="display: flex">
+<button type="button" aria-pressed="true" data-mode="ind" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: #1E1A17; color: #FBF8F3">Individual</button>
+<button type="button" aria-pressed="false" data-mode="grp" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: transparent; color: #1E1A17">Grupal (2 a 5 personas)</button>
+</div>
+
+<div data-show="m-grp" hidden style="display: flex">
+<button type="button" aria-pressed="false" data-mode="ind" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: transparent; color: #1E1A17">Individual</button>
+<button type="button" aria-pressed="true" data-mode="grp" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: #1E1A17; color: #FBF8F3">Grupal (2 a 5 personas)</button>
+</div>
+
+</div>
+</div>
 <div class="pkg-grid" style="display: flex; flex-wrap: wrap; gap: 24px">
 
 <article id="paquete-viajero" style="flex: 1 1 250px; min-width: 0; background: #F4EEE6; border: 1px solid #E2D7C9; border-radius: 4px; padding: 30px 26px; display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 80px">
@@ -469,10 +476,24 @@ html{scroll-behavior:auto}
 <h2 style="margin: 0; font-weight: 400; font-size: clamp(30px, 4vw, 42px); line-height: 1.12">Todos los precios, de un vistazo</h2>
 <p style="margin: 0; color: #4A413A">Sesiones de 1 hora. Precios en pesos colombianos (COP). En grupo (de 2 a 5 personas), cada persona paga cerca del 60 % del precio individual.</p>
 </div>
+<div style="display: flex">
+<div role="group" aria-label="Modalidad de las clases" class="mode-group" style="border: 1px solid #1E1A17; border-radius: 3px; overflow: hidden">
+<div data-show="m-ind" style="display: flex">
+<button type="button" aria-pressed="true" data-mode="ind" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: #1E1A17; color: #FBF8F3">Individual</button>
+<button type="button" aria-pressed="false" data-mode="grp" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: transparent; color: #1E1A17">Grupal (2 a 5 personas)</button>
+</div>
+
+<div data-show="m-grp" hidden style="display: flex">
+<button type="button" aria-pressed="false" data-mode="ind" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: transparent; color: #1E1A17">Individual</button>
+<button type="button" aria-pressed="true" data-mode="grp" style="border: none; padding: 12px 20px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; min-height: 44px; background: #1E1A17; color: #FBF8F3">Grupal (2 a 5 personas)</button>
+</div>
+
+</div>
+</div>
 <details class="price-details" open>
 <summary style="list-style: none; cursor: pointer; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; border: 1px solid #1E1A17; border-radius: 3px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 15px; font-weight: 500">Ver la tabla de precios<span class="faq-plus" aria-hidden="true" style="font-size: 26px; color: #6E1F2A; line-height: 1; transition: transform 0.2s">+</span></summary>
 <div class="price-wrap" style="overflow-x: auto; border: 1px solid #E2D7C9; border-radius: 4px; background: #F4EEE6">
-<table class="price-table" style="width: 100%; min-width: 720px; border-collapse: collapse; font-size: 16px">
+<table class="price-table" data-modo="ind" style="width: 100%; min-width: 600px; border-collapse: collapse; font-size: 16px">
 <thead>
 <tr style="background: #1E1A17; color: #FBF8F3; text-align: left; font-family: 'Montserrat', system-ui, sans-serif; font-size: 14px">
 <th scope="col" style="padding: 16px 20px; font-weight: 500">Paquete</th>
@@ -620,7 +641,11 @@ html{scroll-behavior:auto}
   /* Modalidad individual / grupal y selector de objetivo */
   var keys = ['viajero', 'entrevista', 'examen', 'base', 'club'];
   function show(prefix, key, on) { document.querySelectorAll('[data-show="' + prefix + '-' + key + '"]').forEach(function (el) { el.hidden = !on; }); }
-  function setMode(m) { modo = m; show('m', 'ind', m === 'ind'); show('m', 'grp', m === 'grp'); refrescar(); }
+  function setMode(m) {
+    modo = m; show('m', 'ind', m === 'ind'); show('m', 'grp', m === 'grp');
+    document.querySelectorAll('.price-table').forEach(function (t) { t.setAttribute('data-modo', m); });
+    refrescar();
+  }
   function setGoal(g) {
     show('q', 'none', false);
     keys.forEach(function (k) { show('q', k, k === g); });
